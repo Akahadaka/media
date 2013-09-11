@@ -1,0 +1,48 @@
+# ============================
+# Limit access to config files
+# ============================
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak)$">
+	Order Allow,Deny
+	Deny from all
+</FilesMatch>
+
+# ========================================
+# Turn on rewrite for conditional rewrites
+# ========================================
+Options +FollowSymlinks
+RewriteEngine on
+
+# ================
+# Add slash always
+# ================
+##RewriteCond %{REQUEST_FILENAME} !-f
+##RewriteCond %{REQUEST_URI} ([^/]+)$
+##RewriteRule (.*)$ %{REQUEST_URI}/ [L,R=301,QSA]
+
+# =====================
+# Convert to clean URLS
+# =====================
+RewriteCond %{QUERY_STRING} $page=(.*)|$page=(.*)&(.*)
+RewriteRule ^$ %1/?%2 [L,R=301]
+
+# =======================
+# Convert from clean URLS
+# =======================
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?$page=$1 [L,QSA]
+
+# =======================
+# Turn on error redirects
+# =======================
+#ErrorDocument 400 /404
+#ErrorDocument 401 /404
+#ErrorDocument 403 /404
+ErrorDocument 404 /404
+#ErrorDocument 405 /404
+#ErrorDocument 406 /404
+#ErrorDocument 409 /404
+#ErrorDocument 413 /404
+#ErrorDocument 414 /404
+#ErrorDocument 500 /404
+#ErrorDocument 501 /404

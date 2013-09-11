@@ -1,0 +1,503 @@
+/**
+ * COMMON
+ */
+.clear { clear:both;}
+.left {float:left}
+.center {float:left}
+.right {float:right}
+.small {font-size:0.75em}
+.tiny {font-size:0.55em}
+.required {color:#F00}
+
+/**
+ * MESSAGES
+ */
+.messages {
+	margin-bottom:10px;
+	background-color: #FFF;
+	width: 960px;
+	padding: 0;
+	font-size:1.3em;
+	text-align: center;
+	color:#AAA;
+	list-style-type:none;
+	padding:0;
+	margin:0 0 0 -10px;
+}
+.messages li {
+	margin:0;
+	padding:10px;
+	border:0px solid #AAA;
+	background-color:#FFC;
+	color:#F93;
+}
+.success,
+.messages li.success {
+	border-color: #0A0;
+	background-color:#EFE;
+	color:#0A0;
+}
+.warning,
+.messages li.warning {
+	border-color: #F90;
+	background-color:#FFC;
+	color:#F90;
+}
+.failure,
+.messages li.failure {
+	border-color: #C00;
+	background-color:#FEE;
+	color: #C00;
+}
+
+/* errors */
+
+textarea.error,
+select.error,
+input.error {
+	border:#F00 solid 1px;
+}
+
+label.error {
+	color:#F00;
+	font-weight:bold;
+}
+
+/* GLOBAL */
+body {
+	background-color:#333;	
+}
+
+a:link, a:visited {
+	color:#063;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+/* HEADER */
+.region-page-top-inner .welcome-message {
+	float: right;
+	color: #FFF;
+	padding: 15px 20px 0 0;
+}
+.zone-user-wrapper,
+.zone-menu-wrapper {
+	background-color:#FFEBB9;
+}
+/* 
+.zone-menu-wrapper {
+ 	border-bottom:#C93 solid 1px;
+}
+*/
+
+.logo-img {
+	text-align:center;
+	margin-top:-20px;
+	padding-bottom:10px;
+}
+
+/* MENU */
+
+/* USER MENU */
+.anymenu.usermenu a {
+	background:none;
+	font-weight:normal;
+}
+
+/*  MAIN MENU */
+.anymenu.mainmenu {
+	float:right;
+	margin-top:41px;
+}
+
+.anymenu.mainmenu a {
+	margin:0 10px 0 0;
+	padding:5px 20px;
+	background-color:#063;
+	color:#FFF;
+	font-weight:normal;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 0px;
+	-moz-border-radius-bottomleft: 0;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 0px;
+	-webkit-border-bottom-left-radius: 0;
+}
+
+.anymenu.mainmenu a:hover {
+	background-color:#FFF;
+	color:#363;
+}
+
+.anymenu.mainmenu a.active {
+	background-color:#FFF;
+	color:#363;
+}
+
+/*  ADMIN MENU */
+.anymenu.adminmenu a {
+	margin:10px 5px;
+	padding:5px 10px;
+	background-color:#666;
+	color:#FFF;
+	font-weight:normal;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	-moz-border-radius-bottomright: 8px;
+	-moz-border-radius-bottomleft: 8px;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+}
+.anymenu.adminmenu a:hover {
+	background-color:#FFF;
+	color:#666;
+}
+
+.anymenu.adminmenu a.active {
+	background-color:#FFF;
+	color:#666;
+}
+
+
+/* CONTENT */
+.section-content {
+	background-color:#EEE;
+}
+.zone-content-wrapper {
+	
+}
+.zone-content {
+	background-color:#FFF;
+	padding-bottom:20px;
+	min-height:400px;
+}
+h1 {
+	color: #FFF;
+	margin: 10px 0 10px 0;
+	padding: 10px;
+	background-color:#696;
+}
+
+/* map */
+#map_coords {
+	margin-top:10px;
+}
+
+/* FORMS & FIELDS */
+
+/* login */
+
+.login-form {
+	margin-top:150px;
+	width:300px;
+	margin:0 auto;
+	padding:20px;
+	background-color:#ECECEC;
+}
+
+/* register */
+
+.register-form {
+	margin-top:150px;
+	width:480px;
+	margin:0 auto;
+	padding:20px;
+	background-color:#ECECEC;
+}
+
+/* register */
+
+.contact-form {
+	margin-top:150px;
+	width:480px;
+	margin:0 auto;
+	padding:20px;
+	background-color:#ECECEC;
+}
+
+/* fields */
+
+.field-wrapper {
+	margin: 2px 0;
+}
+
+.login-form input[type=text],
+.login-form input[type=password],
+.register-form input[type=text],
+.register-form input[type=password],
+.contact-form input[type=text],
+.contact-form input[type=password],
+.contact-form textarea
+{
+	padding:10px;
+	width:90%;
+}
+
+/* fields */
+
+.login-form input[type=submit],
+.login-form input[type=button],
+.register-form input[type=submit],
+.contact-form input[type=submit]
+{
+	font-size:1.5em;
+}
+
+/* labels */
+
+.login-form .label-wrapper,
+.register-form .label-wrapper,
+.contact-form .label-wrapper 
+{ 
+	font-size: 1.2em;
+	background: #ECECEC;
+	padding: 5px;
+	margin: 5px 0px;
+	color: #063;
+	font-weight: bolder;
+}
+label.checkbox {
+	font-size:0.9em;
+	color:#666;
+	font-weight:normal;
+}
+
+/* system */
+
+.system1-form {
+	margin-top:150px;
+	width:480px;
+	margin:0 auto;
+	padding:20px;
+	background-color:#ECECEC;
+}
+.system1-form input[type=text],
+.system1-form input[type=password]
+{
+	padding:10px;
+	width:90%;
+}
+.system1-form input[type=submit] {
+	font-size:1.5em;
+}
+
+/* HOME */
+
+#map_sidebar h3 {
+	color:#333;
+	font-size:1.3em;
+}
+
+
+/* SUBMISSOIN FIELDS */
+
+.intro-text {
+	background-color:#CFC;
+	padding:10px;
+	margin-bottom:10px;
+	border:#6C6 solid 1px;
+	font-size:1.0em;
+	color:#063;
+}
+
+.submission-form .label-wrapper {
+	font-size:1.2em;
+	background:#ECECEC;
+	padding:5px;
+	margin:5px 0px;
+	color:#063;
+	font-weight:bolder;
+}
+.submission-form .value-wrapper {
+	margin-right:25px;
+}
+
+.submission-form .value-wrapper input[type=text],
+.submission-form .value-wrapper textarea {
+	width:100%;
+	padding:10px;
+}
+.submission-form .value-part-wrapper input[type=text] {
+	width:95%;
+}
+
+.submission-form .field-part-wrapper {
+	float:left;
+	margin:0;
+	padding-right: 20px;
+}
+.submission-form .value-wrapper input[type=text].readonly,
+.submission-form .value-part-wrapper input[type=text].readonly {
+	border:none;
+}
+
+/* actions styles */
+
+.actions,
+.form-controls {
+	text-align:right;
+	margin-top:20px;
+}
+.actions input,
+.form-controls input {
+	font-size: 1.5em;
+	padding: 5px;
+	color: white;
+	background: #063;
+}
+
+/* MANAGEMENT TABLES */
+.manage-table {
+	width:100%;
+	border:3px solid #CCC;
+	margin-right:50px;
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+.manage-table .manage-table-filter .label-wrapper {
+	float:left;
+	padding:4px;
+}
+.manage-table .manage-table-filter input {
+	width:550px;
+	font-size:1.25em;
+	letter-spacing:1px;
+}
+.manage-table .toolbar td {
+	padding:5px;
+	background-color:#CCC;
+	border-bottom: 2px solid #999;
+}
+.manage-table .toolbar .table-button {
+	background:#063;
+}
+.manage-table .toolbar .table-button:hover {
+	background:#093;
+}
+.manage-table .toolbar .table-button a {
+	line-height:30px;
+	color:#FFF;
+	font-weight:bold;
+	font-size:14px;
+	text-align:center;
+	display:block;
+	text-decoration: none;
+}
+.manage-table .titlebar th {
+	background-color:#EEE;
+}
+.manage-table tr.odd {
+	background-color:#EEE;
+}
+.manage-table tr:hover {
+	background-color:#FFEBB9;
+	cursor:default;
+}
+
+/* VERIFY */
+.highlight {
+	background-color:#FE9;
+}
+.submission-form input[type=text].readonly,
+.submission-form textarea.readonly,
+.submission-form textarea.readonly:focus {
+	border: none;
+	background-color:transparent;
+	outline:0;
+	outline:none;
+	resize: none;
+}
+.submission-info .label-wrapper {
+	float:left;
+	width:200px;
+	margin:0;
+}
+.submission-info .value-wrapper {
+	float:left;
+}
+
+/* FOOTER */
+.zone-footer-wrapper {
+	border-top: 1px solid #CCC;
+}
+.region-footer-first-inner {
+	color: #CCC;
+	text-align: center;
+	font-size: 0.9em;
+	padding: 10px;
+	min-height: 200px;
+}
+
+/* JQUERY UI */
+.ui-tooltip, .arrow:after {
+	background: #333;
+	border: 2px solid white;
+}
+.ui-tooltip {
+	padding: 10px 20px;
+	color: white;
+	border-radius: 5px;
+	font: normal 14px "Helvetica Neue", Sans-Serif;
+	box-shadow: 0 0 7px black;
+}
+.arrow {
+	width: 70px;
+	height: 16px;
+	overflow: hidden;
+	position: absolute;
+	left: 50%;
+	margin-left: -35px;
+	bottom: -16px;
+}
+.arrow.top {
+	top: -16px;
+	bottom: auto;
+}
+.arrow.left {
+	left: 20%;
+}
+.arrow:after {
+	content: "";
+	position: absolute;
+	left: 20px;
+	top: -20px;
+	width: 25px;
+	height: 25px;
+	box-shadow: 6px 5px 9px -9px black;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	tranform: rotate(45deg);
+}
+	.arrow.top:after {
+	bottom: -20px;
+	top: auto;
+}
+
+/* GRID 960 HELPER */
+.container-12,
+.container-16,
+.container-24 {
+  background-repeat: repeat-y;
+}
+
+/* 
+.container-12 {
+  background-image: url(../images/12_col.png);
+}
+ */
+
+.container-16 {
+  background-image: url(../images/16_col.gif);
+}
+
+.container-24 {
+  background-image: url(../images/24_col.gif);
+}
+
+

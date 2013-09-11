@@ -1,0 +1,27 @@
+/**
+ * ANY MENU
+ */
+.anymenu {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+.anymenu li {
+	float:left;
+	margin-left:0;
+}
+	
+.anymenu a {
+	display:block;
+	background-color:#FFF;
+	padding:5px 10px;
+	text-decoration:none;
+	color:#333;
+}
+
+.anymenu a:hover,
+.anymenu a.active {
+	background-color:#999;
+	color:#FFF;
+}

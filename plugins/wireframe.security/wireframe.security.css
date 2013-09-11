@@ -1,0 +1,19 @@
+#wireframe-security {
+	position:fixed;
+	bottom:0;
+}
+
+#wireframe-security .access-level {
+	float:left;
+	border-right:1px solid #CCC;
+	padding:5px 10px;
+}
+
+#wireframe-security .access-level.alpha,
+#wireframe-security .access-level.omega {
+	border:none;
+}
+
+#wireframe-security .access-level.active {
+	background-color:#CCC;
+}
