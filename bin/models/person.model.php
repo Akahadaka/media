@@ -43,8 +43,8 @@ final class Person_Model extends Ashtree_Model {
 		$this->password = $password = Ashtree_Common::random_alphanumeric(6);
 		
 		if ($this->password != '') {
-			$sql = Ashtree_Database_Connection::instance(SNOW_SITE_NAME);
-			$sql->query = "UPDATE snow_userinfo SET password = MD5(:password) WHERE username = :username";
+			$sql = Ashtree_Database_Connection::instance(ASH_SITE_NAME);
+			$sql->query = "UPDATE ash_userinfo SET password = MD5(:password) WHERE username = :username";
 	
 			$sql->bind(':password', $this->password);
 			$sql->bind(':username', $this->email);
@@ -55,7 +55,7 @@ final class Person_Model extends Ashtree_Model {
 			
 			$sql->query = "
 				SELECT * FROM {$this->tablename} data
-				LEFT JOIN snow_userinfo info ON info.identity =  data.identity
+				LEFT JOIN ash_userinfo info ON info.identity =  data.identity
 				WHERE info.username = :username
 			";
 			$sql->bind(':username', $username);
@@ -71,10 +71,10 @@ final class Person_Model extends Ashtree_Model {
 		$mail = new Ashtree_Common_Sendmail();
 		#$mail->to           = "{$this->firstname} {$this->lastname} <{$this->email}>";
 		$mail->to           = $this->email;
-		$mail->from         = "Department of Environmental Affairs <beta+dea@snowball.co.za>";
-		$mail->subject      = $mailer->title = "DEA Password Reset";
+		$mail->from         = "Ashtree Media <beta+media@ashtree.co.za>";
+		$mail->subject      = $mailer->title = "Media Password Reset";
 		$mail->isHTML();
-		$site_url = SNOW_ROOTHTTP;
+		$site_url = ASH_ROOTHTTP;
 		$mail->message      = <<<MAIL
 <p>Dear {$this->firstname}</p>
 <p>
@@ -105,11 +105,11 @@ MAIL;
 	public function sendmail_welcome() {
 		$mail = new Ashtree_Common_Sendmail();
 		$mail->to           = $this->email;
-		$mail->from         = "Department of Environmental Affairs <beta+dea@snowball.co.za>";
-		$mail->subject      = $mailer->title = "DEA Online Registration";
+		$mail->from         = "Ashtree Media <beta+media@ashtree.co.za>";
+		$mail->subject      = $mailer->title = "Media Online Registration";
 		$mail->isHTML();
 		
-		$site_url = SNOW_ROOTHTTP;
+		$site_url = ASH_ROOTHTTP;
 		
 		$mail->message      = <<<MAIL
 <p>Dear {$this->firstname}</p>
@@ -140,12 +140,11 @@ MAIL;
 	
 	public function sendmail_notify() {
 		$mail = new Ashtree_Common_Sendmail();
-		$mail->to           = 'beta+dea@snowball.co.za';
-		$mail->to           = "march@turnbull.co.za";
-		$mail->from         = "Department of Environmental Affairs <beta+dea@snowball.co.za>";
+		$mail->to           = 'beta+media@ashtree.co.za';
+		$mail->from         = "Ashtree Media <beta+media@ashtree.co.za>";
 		$mail->isHTML();
 		
-		$site_url       = SNOW_ROOTHTTP;
+		$site_url       = ASH_ROOTHTTP;
 		$special_access = ($this->special) ? 'Yes' : 'No';
 		$special_url    = ($this->special) ? <<<MAIL
  and has requested special access. <a href="{$site_url}user/account/update/{$this->identity}">Grant Special Access to {$this->firstname}</a>
@@ -191,7 +190,7 @@ MAIL;
 		// Userdata
 		$conn->query = "
 			SELECT * FROM {$this->tablename} data 
-			LEFT JOIN snow_userinfo info ON info.identity =  data.identity
+			LEFT JOIN ash_userinfo info ON info.identity =  data.identity
 			WHERE data.identity = :identity
 		";
 		$conn->bind(':identity', $id);
@@ -214,7 +213,7 @@ MAIL;
 		
 		// Insert into database
 		$conn->query = "
-			INSERT INTO snow_userinfo (
+			INSERT INTO ash_userinfo (
 				username, 
 				password, 
 				security, 
@@ -290,7 +289,7 @@ MAIL;
 		$conn->invoke();
 		
 		$conn->query = "
-			UPDATE snow_userinfo SET
+			UPDATE ash_userinfo SET
 				username = :username,
 				security = :security
 			WHERE identity = :id
@@ -302,7 +301,7 @@ MAIL;
 		$conn->invoke();
 		
 		if ($this->password != '') {
-			$conn->query = "UPDATE snow_userinfo SET password = MD5(:password) WHERE identity = :id";
+			$conn->query = "UPDATE ash_userinfo SET password = MD5(:password) WHERE identity = :id";
 			
 			$conn->bind(':password', $this->password);
 			$conn->bind(':id', $this->id);

@@ -6,11 +6,15 @@ $usr = Ashtree_Common_Secure::instance();
 
 // MAIN MENU
 $mainmenu = new Plugin_Jquery_Anymenu('mainmenu');
-$home     = $mainmenu->createItem('Home');
-$about    = $mainmenu->createItem('About', 'about');
-$contact  = $mainmenu->createItem('Contact', 'contact');
+$home    = $mainmenu->createItem('Browse');
+$watch   = $mainmenu->createItem('Watch', 'watch');
+$convert = $mainmenu->createItem('Convert', 'convert');
+$about   = $mainmenu->createItem('About', 'about');
+$contact = $mainmenu->createItem('Contact', 'contact');
 
 $mainmenu->addItem($home);
+$mainmenu->addItem($watch);
+$mainmenu->addItem($convert);
 $mainmenu->addItem($about);
 $mainmenu->addItem($contact);
 
